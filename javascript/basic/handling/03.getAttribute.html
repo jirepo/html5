@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <title>Document</title>
+ <script>
+   window.addEventListener('load', function() {
+     let apple = document.getElementById("apple")
+     let val = apple.getAttribute('value')
+     console.log(val)
+     apple.id = "aaaaa"
+     apple["id"] = 'aaaabbbb'
+     
+
+     console.log(apple.getAttribute('value'))
+     console.log(apple.getAttribute('id'))
+     console.log(apple.getAttribute('type'))
+   })
+ </script>
+</head>
+<body>
+  <form>
+    <input id="pear"type="text"  value="a">
+    <input id="apple"type="text" value="a">
+  </form>
+</body>
+</html>

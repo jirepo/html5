@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      div {
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <template id="my-template">
+      <h1>Template</h1>
+    </template>
+
+    <my-element id="my-element" title="MyElement2">
+      <div slot="slot1"><h2>slot1</h2></div>
+      <div slot="slot2"><h2>slot2</h2></div>
+    </my-element>
+    <div class="shadow-div">
+      Parent
+    </div>
+    <script>
+      class MyElement extends HTMLElement {
+        constructor() {
+          super();
+          // Attach a shadow root to the element.
+          let shadowRoot = this.attachShadow({ mode: "open" });
+          //let tmpl = document.querySelector("#my-template");
+          //shadowRoot.appendChild(tmpl.content.cloneNode(true));
+          shadowRoot.innerHTML = `
+          <style>
+            :host {
+              display: block;
+              background-color: blue;
+            }
+            :host(:hover) {
+              opacity: 0;
+            }
+          </style>
+          <div>
+            <div">
+              <h1>Shadow DOM</h1>
+            </div>
+            <slot name="slot1"><h2>Fallback Content</h2></slot>
+            <slot name="slot2"><h2>Fallback Content</h2></slot>
+          </div>
+          `;
+        }
+        connectedCallback() {
+        }
+        get title() {
+          return this.getAttribute("title");
+        }
+        set title(val) {
+          this.setAttribute("title", val);
+        }
+        static get observedAttributes() {
+          return ["title"];
+        }
+        attributeChangedCallback(attrName, oldVal, newVal) {
+        }
+        render() {
+        }
+      }
+      window.customElements.define("my-element", MyElement);
+
+    </script>
+  </body>
+</html>

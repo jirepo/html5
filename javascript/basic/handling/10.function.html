@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Document</title>
+  <script>
+
+    function funcA() {
+      console.log('funcA')
+    }
+    window.funcB = function() {
+      console.log('funcB')
+    }
+    window['funcC'] = function() {
+      console.log('funcC')
+    }
+    var funcD = function() { 
+      console.log('funcD')
+    }
+
+    var funcE = () => {
+      console.log('funcE')
+    }
+    // parameter가 있는 함수 
+    function funcF(name) {
+      console.log(name)
+    }
+    function funcG(name, age) {
+      console.log(name + "/" + age)
+    }
+
+    // 일회용 객체에서의 함수 선언 
+    var obj = { 
+      funcA() {
+        console.log('funcA')
+      },
+      funcB() {
+        console.log('funcB')
+      }
+    }
+
+    
+
+    
+    window.addEventListener("DOMContentLoaded", function () {
+      funcA()
+      funcB()
+      funcC()
+      window['funcD']()
+      funcE()
+      funcF('kim')
+      funcG('kim', 12)
+      obj.funcA()
+      obj.funcB()
+
+    })
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

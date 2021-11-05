@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Document</title>
+  <script>
+    
+    window.addEventListener("DOMContentLoaded", function() {
+      var input1 = document.getElementById('input1')
+      // input1.addEventListener('keydown', function(event) {
+      //   console.log(event)
+      //   console.log(event.code)
+      //   console.log(event.key)
+      //   console.log(event.keyCode)
+      // })
+      // input1.addEventListener('keyup', function(event) {
+      //   console.log(event)
+      //   console.log(event.code)
+      //   console.log(event.key)
+      //   console.log(event.keyCode)
+      // })
+      input1.addEventListener('focus', function(event) {
+        console.log(event)
+      })
+      
+      var div1 = document.getElementById('div1')
+      // div1.addEventListener('mouseover', function(event) {
+      //   console.log(event) 
+      //   console.log(event.x)
+      //   console.log(event.y)
+      // })
+      div1.addEventListener('mousemove', function(event) {
+        //console.log(event) 
+        console.log(event.x)
+        console.log(event.y)
+      })
+
+      var span1 = document.getElementById("span1")
+      span1.addEventListener('click', function(event) {
+        console.log(event)
+        console.log(event.target)
+      })
+
+      var input2 = document.getElementById("input2")
+      input2.addEventListener('select', function(event) {
+        console.log(event)
+      })
+      var icecream = document.getElementById("ice-cream")
+      icecream.addEventListener('change', function(event) {
+        console.log(event)
+        console.log(event.target.value)
+        console.log(event.target.selectedIndex)
+        console.log(event.target.options[event.target.selectedIndex].text)
+      })
+
+      
+    }, false)
+
+  </script>
+</head>
+
+<body>
+  
+    이벤트1: <input type="text" id="input1" value=""> <br>
+    <div id="div1" style="border-style: solid;">
+       Mouse Event
+       <br><br><br><br><br>
+    </div>
+    <div>
+      <span id="span1">Click Me!</span><br>
+      <input type="text" id="input2" value=""> <br>
+    </div>
+    <div>
+      <label>Choose an ice cream flavor:
+        <select class="ice-cream" id="ice-cream">
+          <option value="">Select One …</option>
+          <option value="chocolate">Chocolate</option>
+          <option value="sardine">Sardine</option>
+          <option value="vanilla">Vanilla</option>
+        </select>
+      </label>
+    </div>
+      
+  
+</body>
+
+</html>

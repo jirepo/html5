@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+
+
+    // 배열 구조 분해 
+    var foo = ["one", "two", "three"];
+
+    var [red, yellow, green] = foo;
+    console.log(red); // "one"
+    console.log(yellow); // "two"
+    console.log(green); // "three"
+    
+
+    // 객체 구조 분할 
+    var user = {
+      name: "홍길동",
+      age: 10
+    }
+    let { name, age } = user;
+    console.log(name);
+    console.log(age);
+
+    // 함수 구조 분할 
+    function getSomtehing() {
+      let add = 1 + 2;
+      let multi = 2 * 10;
+      return { add, multi }
+    }
+    let { add, multi } = getSomtehing();
+    console.log(add);
+    console.log(multi);
+    // 배열로 반환 
+    function returnArray() {
+      let add = 1 + 2;
+      let multi = 2 * 10;
+      return [add, multi]
+    }
+    let [resAdd, resMulti] = returnArray();
+    console.log(resAdd);
+    console.log(resMulti);
+
+
+
+
+
+
+  </script>
+
+</body>
+
+</html>

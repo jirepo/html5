@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="main.css">
+  <link rel="import"  href="component.html">
+  <title>Document</title>
+  
+  <script>
+    const handleLoad = e => {
+      console.log("load");
+    }
+    window.addEventListener('load', () => {
+      console.log('main loaded');
+      // Thanks to http://www.html5rocks.com/en/tutorials/webcomponents/imports/
+      var link = document.querySelector('link[rel="import"]');
+      link.addEventListener('load', e => {
+        var importedDoc = link.import; 
+        console.log("imported")
+        console.log(importedDoc);
+      })
+
+      // // Clone the <template> in the import.
+      // var template = link.import.querySelector('template');
+      // //var template = document.querySelector('template');
+      // var clone    = document.importNode(template.content, true);
+      // document.querySelector('#getting-started-info').appendChild(clone);
+    })
+  </script>
+
+</head>
+
+<body>
+  <h1>hello</h1>
+  <div id="getting-started-info'"></div>
+</body>
+
+</html>

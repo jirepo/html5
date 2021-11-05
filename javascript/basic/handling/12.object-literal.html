@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Document</title>
+  <script>
+    var MyObj = {
+      name: 'Hong',
+      age: 1,
+      getName: function () {
+        return MyObj.name;
+      },
+      getAge() {
+        return MyObj.age;
+      },
+      getUserInfo() {
+        // this 사용 조심해야 함
+        return this.name + "이다";
+      },
+      fn: {
+        getUserInfo() {
+          return MyObj.name + "이다"
+        }
+      }
+    }
+    var obj = {}
+    obj.name = "김"
+    obj.age = 1
+    obj.getName = function () {
+      return obj.name  // or return this.name 
+    }
+
+    console.log(">>>>" + obj.getName())
+
+    let num = 35;
+    let cap = 10; 
+    let reqBus = (num%2 > 0) ? num/cap + 1: num/cap;
+    console.log(num/cap) 
+    console.log(reqBus)
+
+
+
+
+    window.addEventListener("DOMContentLoaded", function () {
+      console.log(MyObj.getName())
+      console.log(MyObj.getAge())
+      console.log(MyObj.getUserInfo())
+      console.log(MyObj.fn.getUserInfo())
+    })
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

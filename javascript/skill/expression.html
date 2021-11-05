@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+  <script>
+
+    // || 사용하여 간단히 표현 
+    function setTitle(title) {
+      if (!title) {
+        return "Untitled";
+      } else {
+        return title;
+      }
+    }
+    let title = setTitle("111");
+    console.log(title);
+
+    let title2 = "" || "Untitled";
+    console.log(title2);
+
+    // && 사용 
+    function isAdult(age) { if (age && age > 17) { return true; } else { return false; } }
+    let adultState = isAdult(0)
+    console.log(adultState);
+
+    function isAdult2(age)  { return (age && age > 17)? true: false;}
+    let adultState2 = isAdult2(0);
+    console.log(adultState2);
+
+    // 분기처리하여 함수 호출
+    function getUserId(user) {
+      if(user && user.id) {
+        return user.id; 
+      }else {
+        return null;
+      }
+    }
+    let user = null; 
+    let userId = getUserId(user);
+    console.log(userId); 
+    // 간단히 
+
+    let userId2 = (user && user.id) || null;
+    console.log(userId2);
+
+    // 즉시 실행 함수 
+    let userId3 = (user && user.id) || ( function() { return  "Relogined" })();
+    console.log(userId3); 
+
+    let userId4 = (user && user.id) || ( () => "Relogined" )();
+    console.log(userId3); 
+
+
+
+    // 콤마 연산 
+    let x = 1; 
+    x = ( x++, x); 
+    console.log(x);  // 2가 출력된다. 
+
+    x = (2, 3) 
+    console.log(x); // 3이 출력된다. 
+
+
+    let a, b,c; 
+    a = b = 3, c =4; 
+    console.log(a); // 3 
+    console.log(b);
+    console.log(c);
+
+    var x1, y1, z1;
+    
+    x1 = (y1 = 5, z1 = 6); // 콘솔에는 6을 반환
+    console.log(x1); // 6
+    console.log(y1); // 5
+    console.log(z1); // 6 
+
+
+    function add(a,b)  {
+      return a + b; 
+    }
+    function multiply(a, b) {
+      return a * b; 
+
+    }
+    // 각각의 피연산자를 왼쪽에서 오른쪽 순서로 평가하고, 마지막 연산자의 값을 반환합니다.
+    // 연산을 차레 대로 수행하고,
+    let sum, multi;
+    sum = multi = 0;
+    console.log(sum); // 0
+    // 1 + 2가 먼저 실행되고, 2 * 5의 값을 반환
+    multi  = ( sum = add(1, 2),  multiply(2, 5));
+    console.log(multi); // 10 
+    console.log(sum); // 3
+
+
+  </script>
+</body>
+
+</html>
