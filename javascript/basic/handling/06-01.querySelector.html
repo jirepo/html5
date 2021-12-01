@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    <ul>
+      <li>111</li>
+      <li>222</li>
+    </ul>
+    <div>
+      <ul>
+        <li>aa</li>
+        <li>bb</li>
+      </ul>
+    </div>
+    <div>
+      <div>
+        <ul>
+          <li>xx</li>
+          <li>yy</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <script>
+    // let d = document; 
+    // let li = d.querySelectorAll("div ul li")
+    // console.log(li)
+    // let li2 = d.querySelectorAll("div > div >  ul li")
+    // console.log(li2)
+    // li2.forEach( e => {
+    //   //console.log(e.innerHTML)
+    //   e.style.backgroundColor = "blue"
+    //   if(e.matches('li')) {
+    //     console.log("li element")
+    //   }
+    //   if (elem.matches('a[href$="zip"]')) {
+    //      alert("주어진 CSS 선택자와 일치하는 요소: " + elem.href );
+    //   }
+    // })
+
+
+
+    /// forEach
+    let arr = [1,2,3,4,5]
+    arr.forEach( e => {
+      console.log(e)
+    })
+
+    // find
+    let numArr = [1, 200, 300, 400];
+    var retArr = numArr.find( e => {
+        return e % 5 == 0;
+    }); 
+    console.log(retArr); // 15
+
+   var firstNames = ['kim', 'hong', 'park'];
+   var convertedArr = firstNames.map( e => {
+     return "F" + e; 
+   })
+   console.log(convertedArr); 
+
+
+  </script>
+</body>
+</html>
