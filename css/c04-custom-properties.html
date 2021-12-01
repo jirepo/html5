@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+      .all {
+        --text: 12px;
+        --color: yellow;
+      }
+      .all div { 
+        font-size: var(--text);
+        color: var(--color); 
+      }
+
+      .content { 
+        font-size: var(--text);  /* Not applicable */
+        color: var(--color);  /* Not applicable */
+      }
+  </style>
+</head>
+<body>
+
+  <div class="all">
+    <div>여기에는 적용됨</div>
+  </div>
+  <div class="content">여기는 적용안된다.</div>
+
+  <script>
+    
+    let root = document.querySelector(':root')
+    let styles = widnow.getComputedStyle(root);
+    console.log(styles.getPropertyValue('--bg-color')); // 변수 값 얻기
+    theme.style.setProperty('--bg-color', 'green'); // 변수 값 변경
+
+    // 선택자 변수
+    element.style.getPropertyValue("--font-size");
+    element.style.setProperty("--font-size", 20);
+
+
+  </script>
+
+</body>
+</html>
