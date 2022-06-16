@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html, body { 
+            margin:0;
+            padding:0;
+            height: 100%;
+            width: 100%;
+            font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+        }
+        /* layout */ 
+        .layout-main {
+            height: 100%; 
+        }
+        .layout-top {
+            top: 0;
+            text-align: right;
+            border-bottom: 1px solid #ccc;
+        }
+        .layout-content {
+            height: 100%;
+        }
+        .layout-bottom { 
+            border-top: 1px solid #ccc;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            text-align: center; 
+            line-height: 50px;  /* 세로 가운데 정렬 */ 
+            height: 50px;   /* height와 line-height 값이 같아야 정렬됨 */
+        }
+        /* component */ 
+        .container { 
+            display: flex; 
+            height: 100%;
+        }
+        .left { 
+            width: 10%; 
+            min-width: 200px;
+            background-color: #f00; 
+            border-right: 1px solid #000;
+            min-height: 300px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="layout-main">
+        <div class="layout-top">
+            <!-- top -->
+            top
+        </div>
+        <div class="layout-content">
+            <!-- content -->
+            <div class="container">
+                <div id="left" class="left">left</div>
+                <div id="middle">middle</div>
+                <div id="right">right</div>
+            </div>
+        </div>
+        <div class="layout-bottom">
+            bottom 
+            <!-- bottom -->
+        </div>
+    </div>
+</body>
+</html>

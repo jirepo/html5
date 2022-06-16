@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html, body { 
+            margin:0;
+            padding:0;
+            height: 100%;
+            width: 100%;
+            font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+        }
+
+        .layout-container { 
+            display: flex; 
+            flex-direction: column;
+            height: 100%;   /* full screen */ 
+            background-color: bisque;
+        }
+        .layout-content {
+            flex: 1; 
+            background-color: aqua;
+        }
+        .layout-top { 
+            border-bottom: 1px solid #ccc;
+            line-height: 30px;  /* 세로 가운데 정렬 */ 
+            height: 30px;   /* height와 line-height 값이 같아야 정렬됨 */
+            text-align: right; 
+        }
+
+        .layout-bottom { 
+            border-top: 1px solid #ccc;
+            height: 30px;
+            line-height: 30px;  /* 세로 가운데 정렬 */
+            text-align: center;
+        }
+
+        .flex-content-wrapper { 
+            height: 100%;
+            background-color: burlywood;
+        }
+
+        .flex-content-container { 
+            height: 100%;
+            display: flex; 
+            flex-direction: row;
+            width: 100%;
+        }
+
+        .flex-content-left { 
+            width: 200px;
+            min-width: 200px; 
+            border-right: 1px solid #000;
+        }
+        .flex-content-middle { 
+            border-right: 1px solid #000;
+            flex: 1;
+        }
+
+        .flex-content-right { 
+            width: 200px;
+            min-width: 200px; 
+        }
+
+        
+
+       
+    </style>
+</head>
+<body>
+    
+    <div class="layout-container">
+        <div class="layout-top">
+            <!-- top -->
+            <div>top</div>
+        </div>
+        <div class="layout-content">
+            <div class="flex-content-wrapper">
+                <!-- content -->
+                <div class="flex-content-container">
+                    <div class="flex-content-left">left</div>
+                    <div class="flex-content-middle">middle</div>
+                    <div class="flex-content-right">right</div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="layout-bottom">
+            <div>bottom</div>
+        
+            <!-- bottom -->
+        </div>
+    </div>
+</body>
+</html>
